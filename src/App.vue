@@ -1,8 +1,12 @@
 <!--method in vue-->
 <template>
-
- <h1>{{add(3,5,1)}}</h1>
- <h3>{{mod_div(21)}}</h3>
+<h1 v-text="name"></h1>
+<button v-on:click="name='hari neupane'">change name</button>
+<h2>{{count}}</h2>
+<ol>
+<button v-on:click="count +=1">incriment</button>
+<button v-on:click="count -=1">decriment</button>
+</ol>
 </template>
 
 <script>
@@ -12,6 +16,8 @@ export default {
   name: 'App',
  data(){
    return{ 
+ name:"roshan neupane",
+ count:0,
  }
  },
  methods: {
