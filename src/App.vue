@@ -1,12 +1,30 @@
-<!--method in vue-->
+<!--form data bind with script using two way binding (v-model)-->
 <template>
-<h1 v-text="name"></h1>
-<button v-on:click="name='hari neupane'">change name</button>
-<h2>{{count}}</h2>
-<ol>
-<button v-on:click="count +=1">incriment</button>
-<button v-on:click="count -=1">decriment</button>
-</ol>
+<pre>{{JSON.stringify(value,null,2)}}</pre>
+<div id="div1">
+  <h1>Student Information</h1>
+  <form action="">
+    <label for="name"> name</label>
+    <input type="text" id="name" v-model="value.name" placeholder="name"><br>
+    <label for="class">class</label>
+    <input type="number" id="class" placeholder="(1-12)" v-model="value.class"><br>
+    <label for="address">address</label>
+    <input type="text" id="address" v-model="value.address" placeholder="address"><br>
+    <label for="mail">G-mail</label>
+    <input type="text" id="mail" v-model="value.mail" placeholder="xyz@gmail.com"><br>
+    <label for="hobby">hobby</label>
+    <textarea name="hobby" id="hobby" v-model="value.hobby"></textarea>
+    <button v-on:click="color-red">summit</button>
+    </form>
+    </div> 
+    <div>
+      <select name="" id="country" v-model="value.country">
+        <option value=""> </option>
+        <option value="nepal">nepal</option>
+    <option value="china">china</option>
+    <option value="india">india</option>
+      </select>
+    </div>
 </template>
 
 <script>
@@ -16,18 +34,18 @@ export default {
   name: 'App',
  data(){
    return{ 
- name:"roshan neupane",
- count:0,
- }
- },
- methods: {
- add(a,b,c){
-   return a+b+c
- },
- mod_div(a){
-return a%2
+ value:{
+name:'',
+class:'',
+address:'',
+mail:'',
+hobby:'',
+country:''
  }
  }
+ }
+
+
  }
 
 </script>
@@ -41,4 +59,24 @@ return a%2
   color: #2c3e50;
   margin-top: 60px;
 }
+#div1{
+  position: relative;
+
+}
+label {
+font-weight:bold ;
+margin-bottom: 5px;
+
+}
+input + label{
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-flex;
+}
+#country{
+  padding: 0.5rem;
+  margin: 15px;
+  width: 21rem;
+}
+
 </style>
