@@ -3,7 +3,7 @@
 <pre>{{JSON.stringify(value,null,2)}}</pre>
 <div id="div1">
   <h1>Student Information</h1>
-  <form action="">
+  <form >
     <label for="name"> name</label>
     <input type="text" id="name" v-model="value.name" placeholder="name"><br>
     <label for="class">class</label>
@@ -15,16 +15,32 @@
     <label for="hobby">hobby</label>
     <textarea name="hobby" id="hobby" v-model="value.hobby"></textarea>
     <button v-on:click="color-red">summit</button>
-    </form>
-    </div> 
     <div>
-      <select name="" id="country" v-model="value.country">
-        <option value=""> </option>
+      <select name="" id="country" multiple v-model="value.country">
+        
         <option value="nepal">nepal</option>
     <option value="china">china</option>
     <option value="india">india</option>
       </select>
     </div>
+    <div>
+      <input type="checkbox"  id="remotework" v-model="value.remotework" >
+     <label for="remotework">check remote work </label> 
+    </div>
+    <div>
+      <label for="">your skilSet</label>
+    <input type="radio" id="html" v-model="value.skillSet">
+    <label for="html">html</label>
+    <input type="radio" id="css" v-model="value.skillSet">
+    <label for="css">css</label>
+    <input type="radio" id="javascript" v-model="value.skillSet">
+    <label for="javascript">javascript</label>
+    </div>
+    <div>
+      <button>submit</button>
+    </div>
+    </form>
+    </div> 
 </template>
 
 <script>
@@ -40,8 +56,12 @@ class:'',
 address:'',
 mail:'',
 hobby:'',
-country:''
- }
+country:[],
+remotework:false,
+skillSet:[],
+ },
+
+ 
  }
  }
 
